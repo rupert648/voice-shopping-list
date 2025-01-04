@@ -1,4 +1,4 @@
-module github.com/quii/todo
+module github.com/rupert648/todo
 
 go 1.19
 
@@ -7,6 +7,7 @@ require (
 	github.com/go-rod/rod v0.112.2
 	github.com/google/uuid v1.3.0
 	github.com/gorilla/mux v1.8.0
+	github.com/mattn/go-sqlite3 v1.14.24
 	golang.org/x/exp v0.0.0-20221126150942-6ab00d035af9
 )
 

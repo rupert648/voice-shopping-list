@@ -4,7 +4,7 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/quii/todo/domain/todo"
+	"github.com/rupert648/todo/domain/shopping"
 )
 
 type IndexView struct {
@@ -15,8 +15,8 @@ func NewIndexView(templ *template.Template) *IndexView {
 	return &IndexView{templ: templ}
 }
 
-func (t *IndexView) Index(w http.ResponseWriter, todos []todo.Todo) {
-	var viewModel any = todos
+func (t *IndexView) Index(w http.ResponseWriter, shoppingItems []shopping.ShoppingItem) {
+	var viewModel any = shoppingItems
 	if err := t.templ.ExecuteTemplate(w, "index", viewModel); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}

@@ -1,0 +1,101 @@
+:root {
+    --primary: #ff0000;
+    --bg: #1a1a1a;
+    --bg-alt: #2a2a2a;
+    --text: #ffffff;
+}
+
+section {
+    width: min(500px, 90vw);
+    margin: clamp(0.5rem, 2vw, 2rem) auto;
+    padding: 0 1rem;
+}
+
+body {
+    font-family: monospace;
+    font-size: clamp(16px, 4vw, 20px);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: clamp(3em, 10vw, 5em);
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.03em;
+}
+
+.done {
+    text-decoration: line-through;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.sortable div {
+    padding: 1em;
+    border-bottom: 2px solid var(--primary);
+    cursor: grab;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+}
+
+.sortable div:hover {
+    background-color: var(--bg-alt);
+    transform: translateX(4px);
+}
+
+.sortable div span {
+    cursor: pointer;
+}
+
+div.dragClass {
+    cursor: grabbing;
+    background-color: var(--bg-alt);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.1);
+    transform: scale(1.02);
+}
+
+label {
+    display: flex;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+label input {
+    width: 100%;
+    background-color: var(--bg-alt);
+    border: 1px solid var(--primary);
+    color: var(--text);
+    padding: 0.8em;
+    font-family: inherit;
+    font-size: 0.9em;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+label input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    font-size: 0.8em;
+    color: var(--primary);
+    transition: all 0.2s ease;
+    padding: 0.2em 0.4em;
+    border-radius: 2px;
+}
+
+button:focus {
+    outline: var(--primary) 2px auto;
+}
+
+button:hover {
+    background-color: var(--primary);
+    color: var(--bg);
+}

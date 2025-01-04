@@ -13,19 +13,19 @@
 </head>
 <body hx-boost="true">
 <section>
-    <h1>Todos</h1>
+    <h1>Shopping</h1>
     <label>Search <input type="search"
                          name="search" placeholder="Begin Typing To Search"
-                         hx-get="/todos"
+                         hx-get="/shopping-item"
                          hx-trigger="keyup changed delay:500ms, search"
                          hx-target="#todos"
                          hx-replace="innerHTML"
         ></label>
 
-    <form hx-post="/todos/sort" hx-trigger="end" class="sortable" id="todos">
+    <form hx-post="/shopping-item/sort" hx-trigger="end" class="sortable" id="todos">
         {{template "todos" .}}
     </form>
-    <form method="post" action="/todos">
+    <form method="post" action="/shopping-item">
         <label>Description <input type="text" minlength="3" name="description" autofocus required/></label>
     </form>
 </section>
